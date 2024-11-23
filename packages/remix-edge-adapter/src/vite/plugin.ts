@@ -1,5 +1,4 @@
 import type { Plugin, ResolvedConfig } from 'vite'
-import { fromNodeRequest, toNodeRequest } from '@remix-run/dev/dist/vite/node-adapter.js'
 import type { EdgeFunction, Context as NetlifyContext } from '@netlify/edge-functions'
 import { writeFile, mkdir, readdir, access } from 'node:fs/promises'
 import { join, relative, sep } from 'node:path'
@@ -200,7 +199,7 @@ export function netlifyPlugin(): Plugin {
             })
           } else {
             // This is building for the dev server, so use the Node adapter
-            return this.resolve('@remix-run/dev/dist/config/defaults/entry.server.node', importer, {
+            return this.resolve('@react-router/dev/dist/config/defaults/entry.server.node', importer, {
               ...options,
               skipSelf: true,
             })
@@ -242,14 +241,15 @@ export function netlifyPlugin(): Plugin {
                   default: EdgeFunction
                 }
                 const handleRequest = build.default
-                let req = fromNodeRequest(nodeReq)
-                const res = await handleRequest(req, getFakeNetlifyContext())
-                if (res instanceof Response) return await toNodeRequest(res, nodeRes)
-                if (res instanceof URL) {
-                  next(new Error('URLs are not supported in dev server middleware'))
-                  return
-                }
-                next()
+                throw new Error('NOT IMPLEMENTED')
+                // let req = fromNodeRequest(nodeReq)
+                // const res = await handleRequest(req, getFakeNetlifyContext())
+                // if (res instanceof Response) return await toNodeRequest(res, nodeRes)
+                // if (res instanceof URL) {
+                //   next(new Error('URLs are not supported in dev server middleware'))
+                //   return
+                // }
+                // next()
               } catch (error) {
                 next(error)
               }

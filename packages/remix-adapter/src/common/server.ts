@@ -1,5 +1,5 @@
-import type { AppLoadContext, ServerBuild } from '@remix-run/node'
-import { createRequestHandler as createRemixRequestHandler } from '@remix-run/node'
+import type { AppLoadContext, ServerBuild } from 'react-router'
+import { createRequestHandler as createRemixRequestHandler } from 'react-router'
 import type { Context } from '@netlify/functions'
 
 type LoadContext = AppLoadContext & Context

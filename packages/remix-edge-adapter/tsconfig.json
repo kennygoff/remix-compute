@@ -4,6 +4,11 @@
     "rootDir": "src",
     "jsx": "react-jsx",
     "outDir": "./build"
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@react-router/dev": ["./node_modules/@react-router/dev/"],
+    //   "react-router": ["./node_modules/react-router/dist/index.d.ts"]
+    // }
   },
   "include": ["deno.d.ts", "./src"]
 }

@@ -1,6 +1,6 @@
 import { config } from '@netlify/remix-adapter'
 
-/** @type {import('@remix-run/dev').AppConfig} */
+/** @type {import('@react-router/dev').AppConfig} */
 export default {
   ...config,
   // See https://remix.run/pages/v2

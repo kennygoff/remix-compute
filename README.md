@@ -12,7 +12,6 @@ are three packages:
 
 - `@netlify/remix-adapter` - The Remix adapter for Netlify Functions
 - `@netlify/remix-edge-adapter` - The Remix adapter for Netlify Edge Functions
-- `@netlify/remix-runtime` - The Remix runtime for Netlify Edge Functions
 
 ## Hydrogen
 

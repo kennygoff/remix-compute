@@ -7,8 +7,8 @@
 // We need to do this because in dev mode we are going through Vite which does not yet suport
 // Deno and thus uses Node.js. See https://github.com/vitejs/vite/discussions/16358.
 
-import type { AppLoadContext, EntryContext } from '@netlify/remix-runtime'
-import { RemixServer } from '@remix-run/react'
+import type { AppLoadContext, EntryContext } from 'react-router'
+import { ServerRouter } from 'react-router'
 import { isbot } from 'isbot'
 import * as ReactDOMServer from 'react-dom/server'
 
@@ -31,7 +31,7 @@ export default async function handleRequest(
 
   // The main difference between this and the default Node.js entrypoint is
   // this use of web streams as opposed to Node.js streams.
-  const body = await ReactDOMServer.renderToReadableStream(<RemixServer context={remixContext} url={request.url} />, {
+  const body = await ReactDOMServer.renderToReadableStream(<ServerRouter context={remixContext} url={request.url} />, {
     signal: abortController.signal,
     onError(error: unknown) {
       // Log streaming rendering errors from inside the shell

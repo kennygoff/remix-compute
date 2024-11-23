@@ -24,7 +24,6 @@
   "dependencies": {
     "@netlify/edge-functions": "^2.10.0",
     "@netlify/remix-edge-adapter": "workspace:*",
-    "@netlify/remix-runtime": "workspace:*",
     "@remix-run/css-bundle": "^2.9.2",
     "@remix-run/react": "^2.9.2",
     "cross-env": "^7.0.3",
